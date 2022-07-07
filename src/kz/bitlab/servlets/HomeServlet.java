@@ -2,7 +2,6 @@ package kz.bitlab.servlets;
 
 
 
-import javax.servlet.ServletException;
 
 import javax.servlet.annotation.WebServlet;
 
@@ -28,7 +27,7 @@ public class HomeServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request,
 
-                          HttpServletResponse response) throws ServletException, IOException {
+                          HttpServletResponse response) {
 
     }
 
@@ -38,14 +37,16 @@ public class HomeServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request,
 
-                         HttpServletResponse response) throws ServletException, IOException {
+                         HttpServletResponse response) throws IOException {
 
         response.setContentType("text/html");
 
         PrintWriter out = response.getWriter();
+        for (int i = 0; i < 10; i++) {
+
 
         out.print("<h1>First BITLAB Java EE Application</h1>");
-
+        }
     }
 
 }
