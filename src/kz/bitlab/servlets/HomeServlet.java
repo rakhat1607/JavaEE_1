@@ -15,11 +15,12 @@ import java.util.ArrayList;
 @WebServlet(value = "/home")
 public class HomeServlet extends HttpServlet {
     @Override
-    protected void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
+
     @Override
-    protected void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
         out.print("<html>");
@@ -61,7 +62,7 @@ public class HomeServlet extends HttpServlet {
         out.print("<select class = 'form-select' name = 'user_age'>");
 
         for (int i = 0; i < 120; i++) {
-            out.print("<option value = '"+i+"'>"+i+" + years old</option>");
+            out.print("<option value = '" + i + "'>" + i + " + years old</option>");
 
         }
         out.print("</select>");
@@ -86,11 +87,10 @@ public class HomeServlet extends HttpServlet {
         out.print("</thead>");
         out.print("<tbody>");
 
-
         ArrayList<Contact> contacts = DBManager.getAllContacts();
 
-        for(Contact cnt:contacts){
-           out.println("<tr><td>"+ cnt.getName() + "</td><td>" + cnt.getSurname() + "</td><td>" + cnt.getAge() + " yers old</td></tr>");
+        for (Contact cnt : contacts) {
+            out.println("<tr><td>" + cnt.getName() + "</td><td>" + cnt.getSurname() + "</td><td>" + cnt.getAge() + " yers old</td></tr>");
         }
         out.print("</tbody>");
         out.print("</table>");
