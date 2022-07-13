@@ -17,12 +17,13 @@ public class ApplyServlet3 extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html");
         String name =request.getParameter("user_name");
         String surname = request.getParameter("user_surname");
 
 
 
         PrintWriter out = response.getWriter();
-        out.println(name + " " + surname);
+        out.println("<h1>"+ name +  " " +    surname +"</h1>");
     }
 }
