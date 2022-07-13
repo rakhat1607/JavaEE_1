@@ -44,6 +44,7 @@ public class HomeServlet2 extends HttpServlet {
         out.print("</body>");
         out.print("</html>");
 
+        response.sendRedirect("/");
 
 
 
